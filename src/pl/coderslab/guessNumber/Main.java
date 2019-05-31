@@ -14,14 +14,14 @@ public class Main {
 
 //        UZYWKONIK ZGADUJE LICZBE
         while(true){
-            System.out.println("Zgadnij liczbe");
+            System.out.print("Zgadnij liczbe: ");
             guess = getIntValue();
             if (guess < los){
-                System.out.println("Za malo");
+                System.out.println("Za malo!");
             }else if(guess > los){
-                System.out.println("Za duzo");
+                System.out.println("Za duzo!");
             }else{
-                System.out.println("Zgadles");
+                System.out.println("Zgadles!");
                 break;
             }
 
