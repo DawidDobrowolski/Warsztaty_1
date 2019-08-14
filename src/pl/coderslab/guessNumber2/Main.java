@@ -1,4 +1,4 @@
-package pl.coderslab.pl.coderslab.guessNumber2;
+package pl.coderslab.guessNumber2;
 
 import java.util.Scanner;
 
