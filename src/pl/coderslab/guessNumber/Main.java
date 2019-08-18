@@ -7,21 +7,21 @@ public class Main {
 
     public static void main(String[] args) {
 
-//        KOMPUTER LOSUJE LICZBE
+//       COMPUTER CHOOSES NUMBER
         Random r = new Random();
         int los = r.nextInt(100) +1 ;
         int guess = 0;
 
-//        UZYWKONIK ZGADUJE LICZBE
+//       PLAYER GUESS NUMBER
         while(true){
-            System.out.print("Zgadnij liczbe: ");
+            System.out.print("Guess the number: ");
             guess = getIntValue();
             if (guess < los){
-                System.out.println("Za malo!");
+                System.out.println("Too low!");
             }else if(guess > los){
-                System.out.println("Za duzo!");
+                System.out.println("Too high!");
             }else{
-                System.out.println("Zgadles!");
+                System.out.println("Correct!");
                 break;
             }
 
@@ -33,7 +33,7 @@ public class Main {
         Scanner scan = new Scanner(System.in);
 
         while (!scan.hasNextInt()) {
-            System.out.println("Prosze wprowadzic liczbe");
+            System.out.println("Please enter the number");
             scan.nextLine();
         }
         return scan.nextInt();

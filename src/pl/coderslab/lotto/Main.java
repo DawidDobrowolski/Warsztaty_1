@@ -17,14 +17,14 @@ public class Main {
             }
         }
         if (success>2) {
-            System.out.println("Liczba trafionych liczb: " + success);
+            System.out.println("Number of hit numbers: " + success);
         }else{
-            System.out.println("Niestety trafiles mniej niz 3 liczby");
+            System.out.println("Unfortunately, you hit less than 3 numbers");
         }
     }
 
 
-//    LOSOWANIE LICZB PRZEZ KOMPUTER
+//    RANDOM NUMBER BY A COMPUTER
     private static int[] lottoNumbers() {
         Random r = new Random();
         int counter = 1;
@@ -40,46 +40,46 @@ public class Main {
             }
         }
         Arrays.sort(numbers);
-        System.out.println("Wylosowano nastepujace liczby: " + Arrays.toString(numbers));
+        System.out.println("Lottery numbers are as follows: " + Arrays.toString(numbers));
         return numbers;
 
     }
 
 
-//    WYBIERANIE LICZB PRZEZ UZYTKOWNIKA
+//    CHOOSING NUMBERS BY THE USER
         private static int[] userNumbers() {
         int counter = 1;
         int number = 0;
         int[] numbers = new int[6];
-        while (counter < 7) {                                      //WALIDACJA LICZB
-            System.out.println("prosze wprowadzic liczbe nr. : " + counter);
+        while (counter < 7) {                                      //NUMBER VALIDATION
+            System.out.println("Please enter the number No. " + counter);
             number = getIntValue();
             if (number > 0 && number < 50) {
                 if (numCheck(numbers, number)) {
-                    System.out.println("Taka liczba juz zostala podana");
+                    System.out.println("This number has already been given");
                 } else {
                     numbers[counter - 1] = number;
                     counter += 1;
                 }
             } else {
-                System.out.println("Liczba jest spoza zakresu 1-49");
+                System.out.println("The number is out of the range 1-49");
             }
         }
 
         Arrays.sort(numbers);
-        System.out.println("Wybrales nastepujace liczby: " + Arrays.toString(numbers));
+        System.out.println("You have selected the following numbers: " + Arrays.toString(numbers));
         return numbers;
     }
 
 
-    //    SPRAWDZAMY CZY TAKA LICZBA JUZ WYSTAPILA
+    //    CHECK WHETHER SUCH NUMBER HAS ALREADY OCCURRED
     private static boolean numCheck(int[] numberArr, int numberCheck) {
         for (int i : numberArr) {
             if (i == numberCheck) {
-                return true;           //GDY WYSTAPILA
+                return true;           //IF OCCURRED
             }
         }
-        return false;                 //GDY NIE WYSTAPILA
+        return false;                 //IF NOT OCCURRED
     }
 
 

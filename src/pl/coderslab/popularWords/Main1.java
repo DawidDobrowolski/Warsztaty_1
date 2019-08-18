@@ -22,16 +22,16 @@ public class Main1 {
         File file1 = new File("filtered_popular_words.txt");
         String site = "http://www.onet.pl/";
 
-        String[] words = getStrings(site); //   Wywolanie wczytania slow
-        Arrays.sort(words);                // posortowanie tablicy slow dla czytelnosci
-        createFile(file, words);           //   Sprawdzanie czy >3 znaki i zapis
-        excludeWords(file, file1, excludedWords);    //   Odfiltrowanie slow i zapis
+        String[] words = getStrings(site); //   loading the words
+        Arrays.sort(words);                // sorting the word array
+        createFile(file, words);           //   save file with words longer than 3 characters
+        excludeWords(file, file1, excludedWords);    //   saving filtered words
 
 
     }
 
 
-//    POBIERANIE SLOW Z SERIWSU DO TABELI STRING
+//    DOWNLOADING WORDS FROM THE WEBSITE TO THE STRING TABLE
 
     private static String[] getStrings(String site) {
         StringBuilder sb = new StringBuilder();
@@ -51,7 +51,7 @@ public class Main1 {
     }
 
 
-//    SPRAWDZANIE CZY SLOWO MA WIECEJ NIZ 3 ZNAKI I ZAPIS PLIKU
+//    FILE SAVING WITH LONGER WORDS THAN 3 CHARACTERS
 
     private static void createFile(File file, String[] words) {
         try {
@@ -68,10 +68,9 @@ public class Main1 {
     }
 
 
-    //    WCZYTYWANIE PLIKU I SPRAWDZANIE SLOW KLUCZOWYCH + ZAPIS NOWEGO PLIKU
+    //    LOADING A FILE AND CHECKING KEYWORDS + SAVING A NEW FILE
     private static void excludeWords(File file, File newFile, String[] exWords) {
         String row;
-        boolean ifEx;
         PrintWriter pw = null;
         try {
             pw = new PrintWriter(newFile);
@@ -84,7 +83,7 @@ public class Main1 {
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
-        loop1:                            //  OZNACZENIE PETLI
+        loop1:
         while (scan.hasNextLine()) {
             row = scan.nextLine();
             loop2:

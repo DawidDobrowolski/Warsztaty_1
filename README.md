@@ -23,4 +23,5 @@ Project was aimed at practicing newly learned technologies.
 * Arrays
 * Exceptions
 * Parsing variables
+* Jsoup library
 
